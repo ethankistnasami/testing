@@ -3,13 +3,15 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import ejs from "ejs";
 
-app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
+
 
 const app = express();
 //const port = 3000;
 const port = process.env.PORT || 3000;
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
 
 function User (name, password, email) {
     this.name = name;
@@ -81,3 +83,4 @@ app.post("/delete-post", (req, res) => {
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
+
