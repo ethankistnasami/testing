@@ -4,7 +4,8 @@ import { dirname } from "path";
 import ejs from "ejs";
 
 const app = express();
-const port = 3000;
+//const port = 3000; for Local Tests
+const port = process.env.PORT || 3000; //For live deployment
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function User (name, password, email) {
