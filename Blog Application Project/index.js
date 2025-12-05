@@ -2,6 +2,8 @@ import express from "express";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import ejs from "ejs";
+app.set("view engine", "ejs");
+app.set("views", __dirname + "/views");
 
 const app = express();
 //const port = 3000; for Local Tests
@@ -22,7 +24,7 @@ app.use(express.static("public"));
 
 
 app.get("/", (req, res) => {
-    res.render(__dirname + "/partials/index.ejs");
+    res.render("index");
     
 })
 
@@ -35,7 +37,7 @@ app.post("/sign-in", (req, res) => {
     console.log(req.body);
     console.log(user.name, user.password, user.email);
 
-    res.render(__dirname + "/partials/sign-in.ejs");
+    res.render(__dirname + "sign-in");
 }) 
 
 
@@ -50,9 +52,9 @@ app.post("/submit", (req, res) => {
     res.render(__dirname + "/partials/home.ejs", {userDetails: user} ); */
 
     if (user.email == req.body.floatingEmail && user.password == req.body.floatingPassword) {
-        res.render(__dirname + "/partials/home.ejs", {userDetails: user} );
+        res.render("home", {userDetails: user} );
     } else {
-        res.render(__dirname + "/partials/sign-in.ejs");
+        res.render("sign-in");
         }
     
 })
@@ -75,7 +77,7 @@ app.post("/make-post", (req, res) => {
     console.log(req.body);
 
     postStorage.push(req.body.usertxt);
-    res.render(__dirname + "/partials/home.ejs", {userPost: postStorage, userDetails: user});
+    res.render("home", {userPost: postStorage, userDetails: user});
 })
 
 
@@ -86,7 +88,7 @@ app.post("/delete-post", (req, res) => {
     console.log("Index is " + postStorage.indexOf(String(req.body.usertxt).trim()));
     console.log("my new function of postindex is " + req.body.postIndex);
     console.log(typeof req.body.usertxt);
-    res.render(__dirname + "/partials/home.ejs", {userPost: postStorage, userDetails: user});
+    res.render("home", {userPost: postStorage, userDetails: user});
     console.log(postStorage);
 
 }) 
