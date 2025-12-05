@@ -47,7 +47,7 @@ app.post("/sign-in", (req, res) => {
 app.post("/submit", (req, res) => {
 
     if (user.email == req.body.floatingEmail && user.password == req.body.floatingPassword) {
-        res.render(__dirname + "/partials/home.ejs", {userDetails: user} );
+        res.render("home", {userDetails: user} );
     } else {
         res.render("sign-in");
         }
@@ -83,4 +83,5 @@ app.post("/delete-post", (req, res) => {
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
+
 
