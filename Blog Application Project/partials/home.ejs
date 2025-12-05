@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<section>
+<div class="hero">
+    <div class="text-secondary px-4 py-5 text-center"> 
+        <div class="py-5"> <h1 class="display-5 fw-bold text-white">Post Away!!!</h1> 
+            <div class="col-lg-6 mx-auto"> 
+                <p class="fs-5 mb-4"> WELCOME <%= userDetails.name.toUpperCase(); %> </p> 
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> 
+                    <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Create</button> 
+                    <button type="button" class="btn btn-outline-light btn-lg px-4">Custom</button> 
+                </div> 
+            </div> 
+        </div> 
+    </div>
+</div>
+</section>
+
+
+<section>
+<div class="flex-posting-window hidden-window">
+
+<form class="posting-window" action="/make-post" method="POST">
+    <!-- <input type="text" name="userPost" placeholder="Write content here"> !-->
+    <textarea rows="2" cols="20" id="usertxt" name="usertxt" wrap="hard">
+    
+    </textarea>
+    <label for="usertxt"></label>
+    <button type="button submit" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Post</button>
+    <!--<input type="submit"> !-->
+    <!-- <label for="floatingPostContent">Write content here</label> !-->
+</form>
+
+</div>
+</section>
+
+
+
+<section>
+<div class="row grid-container">
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[0]; %>
+            <%}%>
+        <!--Bro ipsum dolor sit amet wack hellflip pow cruiser dirtbag first tracks dust on crust. 
+        Shred taco taco mitt face shots flow stoked. 
+        Hammerhead skinny corn, hot dogging heli shuttle misty ride chain suck glades moguls corduroy laps. 
+        Afterbang stoked core shot derailleur park rat bro crunchy apres.!-->
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=0>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[1]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=1>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[2]; %>
+            <%}%>
+
+            <!--Pizza ipsum dolor amet meatball beef pizza white garlic bbq pepperoni hawaiian. 
+        Philly steak thin crust stuffed crust chicken wing steak ranch, 
+        sausage NY style mushrooms hawaiian fresh tomatoes garlic bbq rib bianca pork. 
+        String cheese chicken wing buffalo sauce mozzarella pesto garlic sauce. 
+        Burnt mouth string cheese extra sauce, pesto banana peppers black olives broccoli parmesan chicken wing ricotta. 
+        Green bell peppers thin crust white pizza extra sauce burnt mouth chicken peppers meat lovers 
+        broccoli personal chicken wing sausage red onions garlic parmesan. 
+        Mozzarella bacon bacon & tomato sausage pizza chicken and bacon white garlic personal pan red onions meatball.  !-->
+        </div>
+        
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=2>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="col">
+
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[3]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=3>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[4]; %>
+            <%}%>
+        </div>
+
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=4>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[5]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=5>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[6]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=6>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[7]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=7>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[8]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=8>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[9]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=9>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[10]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn btn btn-outline-info btn-sm fw-bold">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn btn btn-outline-info btn-sm fw-bold">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=10>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[11]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=11>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[12]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=12>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[13]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=13>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[14]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=14>
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[15]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=15>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[16]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=16>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <div class="col">
+        <div class="textbox">
+            <% if (locals.userPost) {%>
+            <%= userPost[17]; %>
+            <%}%>
+        </div>
+
+        <div class="btn-box">
+            <button type="submit" class="edit user-btn">Edit</button>
+
+            <form action="/delete-post" method="POST">
+                <button type="submit" class="delete user-btn">Delete</button>
+                <input type="hidden" name="usertxt">
+                <input type="hidden" name="postIndex" value=17>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<script charset="UTF-8">
+    document.querySelector(".btn.fw-bold").addEventListener("click", function () {
+        document.querySelector(".flex-posting-window").classList.remove("hidden-window");
+    });
+
+
+</script>
+
+
+</body>
+
+</html>
