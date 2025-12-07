@@ -1,0 +1,134 @@
+body, .hero {
+    background-color:black;
+    
+}
+
+.flex-container {
+    display: flex;
+    height: 100vh;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.createAccount, .sign-in-account {
+    width: 50%;
+    height: 30rem;
+    text-align: center;
+    background-color: ghostwhite;
+    border-radius: 10px;
+
+}
+
+
+.grid-container {
+    display: grid;
+    margin: 20px;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 2fr 1fr 2fr 2fr 2fr 2fr;
+    gap: 10px;
+    
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    min-height: 10rem;
+    background-color: #CADEF9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+
+
+
+.user-btn {
+    height: 2rem;
+    width: 4rem;
+    border-radius: 10px;
+    margin-right: 10px;
+    
+}
+
+.btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
+    
+}
+
+
+.textbox {
+    display: flex;
+    min-height: 90%;
+
+}
+
+.flex-posting-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    padding: 10px;
+
+}
+
+
+.posting-window > textarea {
+    height: 15rem;
+    width: 28rem;
+    border-radius: 10px;
+    border: 10px solid #CADEF9;
+    margin-left: 5rem;
+    
+}
+
+.hidden-window {
+    display: none;
+
+}
+
+.post-btn {
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+
+}
+
+@media(max-width: 800px) {
+    .createAccount, .sign-in-account {
+        height: 30rem;
+        width: 80%;
+        
+    }
+
+    .flex-container {
+        flex-direction: column;
+
+    }
+
+    .continue {
+        margin-top: 4rem;
+    
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .posting-window > textarea {
+        margin-left: 0.8rem;
+        width: 27rem;
+
+    }
+
+    .post-btn {
+        margin-left: 11.5rem;
+
+    }
+    
+}
