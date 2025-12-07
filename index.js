@@ -1,6 +1,7 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import path from "path";
 import ejs from "ejs";
 
 const app = express();
@@ -82,3 +83,4 @@ app.listen(PORT, () => {
     console.log("Server is running...");
 
 })
+
