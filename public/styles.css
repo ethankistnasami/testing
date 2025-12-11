@@ -99,41 +99,26 @@ body, .hero {
 }
 
 @media(max-width: 800px) {
-    .createAccount, .sign-in-account {
-        height: 30rem;
-        width: 80%;
-        
-    }
+  .createAccount, .sign-in-account {
+    width: 90%;
+    height: auto;
+  }
 
-    .flex-container {
-        flex-direction: column;
-        min-height: 100vh;
+  .posting-window > textarea {
+    width: 95%;
+    max-width: none;
+    margin: 0 auto;
+  }
 
-    }
+  .post-btn {
+    margin: 1rem auto 5rem auto;
+  }
 
-    .continue {
-        margin-top: 4rem;
-    
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-
-    }
-
-    .posting-window > textarea {
-        margin-left: 0.8rem;
-        width: 27rem;
-
-    }
-
-    .post-btn {
-        margin-left: 11.5rem;
-
-    }
-    
-
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
+
 
 
 
